@@ -1,0 +1,11 @@
+{
+  "name": "@macrofridge/config",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./eslint-preset/index.js",
+  "files": [
+    "eslint-preset",
+    "prettier-preset",
+    "typescript-config"
+  ]
+}

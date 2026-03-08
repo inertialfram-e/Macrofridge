@@ -1,12 +1,12 @@
 # MacroFridge: Roadmap & Task List
 
 ## Phase 1: Foundation (Month 1)
-- [ ] Initialize Turborepo (monorepo).
-- [ ] Scaffold Expo mobile application (`apps/mobile`).
-- [ ] Scaffold NestJS API (`apps/api`).
-- [ ] Configure ESLint/Prettier/TypeScript across workspace.
-- [ ] Set up Docker for Postgres and PowerSync service.
-- [ ] Implement core Auth (Clerk or Supabase Auth).
+- [x] Initialize Turborepo (monorepo).
+- [x] Scaffold Expo mobile application (`apps/mobile`).
+- [x] Scaffold NestJS API (`apps/api`).
+- [x] Configure ESLint/Prettier/TypeScript across workspace.
+- [x] Set up Docker for Postgres and PowerSync service.
+- [x] Implement core Auth (Clerk or Supabase Auth).
 
 ## Phase 2: Offline-First Inventory (Month 2)
 - [ ] Configure SQLite for local mobile storage.

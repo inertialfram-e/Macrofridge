@@ -1,0 +1,25 @@
+# PowerSync Service Configuration
+# Documentation: https://docs.powersync.com/
+
+replication:
+  postgres:
+    # This must match the database URL in docker-compose.yml
+    url: ${POWERSYNC_DATABASE_URL}
+    # PowerSync needs a publication to track changes
+    publication: powersync_publication
+    # And a slot for logical replication
+    slot: powersync_slot
+
+sync:
+  # Port the sync service listens on
+  port: 8080
+  # Sync rules (placeholders)
+  rules:
+    - table: users
+      allow:
+        - read: true
+        - insert: true
+    - table: households
+      allow:
+        - read: true
+        - insert: true
