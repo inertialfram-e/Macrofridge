@@ -7,9 +7,9 @@ order: 10
 created: 2026-03-08
 updated: 2026-03-08
 links:
-  - url: ./VISION.md
+  - url: ../VISION.md
     title: Vision
-  - url: ./TODO.md
+  - url: ../TODO.md
     title: Roadmap
 ---
 
