@@ -1,7 +1,7 @@
 ---
 id: b3a4c5d6
 title: Mobile Household Management UI
-status: Todo
+status: Done
 priority: Medium
 order: 50
 created: 2026-03-08
@@ -9,6 +9,12 @@ updated: 2026-03-08
 links:
   - url: ../linear_ticket_parent_phase2.md
     title: Parent Ticket
+  - url: ./research_2026-03-08.md
+    title: Research Document
+  - url: ./research_review.md
+    title: Research Review
+  - url: ./plan_2026-03-08.md
+    title: Implementation Plan
 ---
 
 # Description

@@ -1,7 +1,7 @@
 ---
 id: parent-macrofridge-phase2
 title: "[Epic] MacroFridge Phase 2: Offline-First Inventory"
-status: Backlog
+status: Done
 priority: High
 order: 20
 created: 2026-03-08

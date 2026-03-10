@@ -1,7 +1,7 @@
 ---
 id: e5f6a7b8
 title: PowerSync Backend Sync Rules
-status: Todo
+status: Done
 priority: High
 order: 30
 created: 2026-03-08
@@ -9,6 +9,12 @@ updated: 2026-03-08
 links:
   - url: ../linear_ticket_parent_phase2.md
     title: Parent Ticket
+  - url: ./research_2026-03-08.md
+    title: Research Document
+  - url: ./research_review.md
+    title: Research Review
+  - url: ./plan_2026-03-08.md
+    title: Implementation Plan
 ---
 
 # Description

@@ -13,13 +13,43 @@ replication:
 sync:
   # Port the sync service listens on
   port: 8080
-  # Sync rules (placeholders)
+  
+  # Sync rules define which data is synced to which device
   rules:
+    # Users: Only sync the current user's profile
     - table: users
       allow:
-        - read: true
-        - insert: true
+        - read: "id = request.auth.sub"
+        - insert: "id = request.auth.sub"
+        - update: "id = request.auth.sub"
+
+    # Households: Only sync households the user is a member of
     - table: households
       allow:
+        - read: "id IN (SELECT household_id FROM household_members WHERE user_id = request.auth.sub)"
+        - update: "id IN (SELECT household_id FROM household_members WHERE user_id = request.auth.sub AND role = 'admin')"
+
+    # Household Members: Sync membership for user's households
+    - table: household_members
+      allow:
+        - read: "household_id IN (SELECT household_id FROM household_members WHERE user_id = request.auth.sub)"
+        - insert: "user_id = request.auth.sub"
+
+    # Inventory Items: Only sync items for the user's households
+    - table: inventory_items
+      allow:
+        - read: "household_id IN (SELECT household_id FROM household_members WHERE user_id = request.auth.sub)"
+        - insert: "household_id IN (SELECT household_id FROM household_members WHERE user_id = request.auth.sub)"
+        - update: "household_id IN (SELECT household_id FROM household_members WHERE user_id = request.auth.sub)"
+        - delete: "household_id IN (SELECT household_id FROM household_members WHERE user_id = request.auth.sub)"
+
+    # Transactions: Only sync transactions for the user's households
+    - table: transactions
+      allow:
+        - read: "household_id IN (SELECT household_id FROM household_members WHERE user_id = request.auth.sub)"
+        - insert: "household_id IN (SELECT household_id FROM household_members WHERE user_id = request.auth.sub)"
+
+    # Products: Global catalog, sync all
+    - table: products
+      allow:
         - read: true
-        - insert: true
